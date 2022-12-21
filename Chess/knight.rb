@@ -9,7 +9,7 @@ include Stepable
     end
 
     def symbol
-        :K
+        "♘"
     end
 
     protected

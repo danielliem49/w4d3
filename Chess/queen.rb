@@ -9,7 +9,7 @@ include Slideable
     end
 
     def symbol
-        :Q
+        "♕"
     end 
 
     private

@@ -8,10 +8,11 @@ include Singleton
     def initialize
         @color = "neutral"
         @symbol = " "
+        @pos = []
     end
 
     def symbol
-        " "
+        @symbol
     end
 
     # def moves

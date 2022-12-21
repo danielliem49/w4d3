@@ -7,7 +7,7 @@ class Pawn < Piece
     end
 
     def symbol
-        :P
+        "♙"
     end
 
     def moves

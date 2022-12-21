@@ -9,7 +9,7 @@ include Slideable
     end
 
     def symbol
-        :B
+        "♗"
     end
 
     private

@@ -1,18 +1,18 @@
 
 require_relative 'piece'
-# require_relative 'pawn'
-# require_relative 'king'
-# require_relative 'queen'
-# require_relative 'nullpiece'
-# require_relative 'knight'
-# require_relative 'rook'
-# require_relative 'bishop'
+require_relative 'pawn'
+require_relative 'king'
+require_relative 'queen'
+require_relative 'nullpiece'
+require_relative 'knight'
+require_relative 'rook'
+require_relative 'bishop'
 
 
 
 class Board
 
-    attr_reader :np
+    attr_reader :np, :grid
 
     def initialize
         @np = NullPiece.instance
@@ -67,6 +67,16 @@ class Board
 
             end
         end
+    end
+
+    def test
+        grid.each do |row|
+            row_arr = []
+            row.each do |ele|
+                row_arr << ele.symbol
+            end
+            p row_arr
+        end            
     end
     
     def [](pos)
