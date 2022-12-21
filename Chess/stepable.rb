@@ -15,9 +15,9 @@ module Stepable
         result = []
         temp.each do |temp_pos|
             result << temp_pos #nil placeholder for Nullclass singleton
-            if board[temp_pos] != nil && self.color == board[temp_pos].color
+            if board[temp_pos] != NullPiece && self.color == board[temp_pos].color
                 return result[0...-1]
-            elsif board[temp_pos] != nil && self.color != board[temp_pos].color
+            elsif board[temp_pos] != NullPiece && self.color != board[temp_pos].color
                 return result
             end
         end

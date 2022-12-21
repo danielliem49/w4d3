@@ -1,4 +1,7 @@
+require_relative 'board'
+
 class Piece
+
 
     def initialize(color, board, pos)
         @color = color
@@ -15,7 +18,7 @@ class Piece
     end
 
     def valid_moves
-
+        board[pos].moves
     end
 
     def pos=(val)

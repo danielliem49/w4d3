@@ -8,6 +8,10 @@ include Stepable
         super
     end
 
+    def symbol
+        :K
+    end
+
     protected
     def move_diffs
         [[-1,2],[-1,-2],[1,2],[1,-2],[2,1],[2,-1],[-2,1],[-2,1]]
