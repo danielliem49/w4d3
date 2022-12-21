@@ -1,13 +1,16 @@
 module Stepable
     
-    def moves
+    def moves(move_differ)
         temp = []
         row, col = self.pos
-        if ((row > 7 || col > 7) || (row < 0 || col < 0))
-            row += dx
-            col += dy
-            temp << [row, col]
+        move_differ.each do |increment|
+        x = increment[0] + row
+        y = increment[1] + col
+            unless ((x > 7 || y > 7) || (x < 0 || y < 0))
+                temp << [x, y]
+            end
         end
+
 
         result = []
         temp.each do |temp_pos|
