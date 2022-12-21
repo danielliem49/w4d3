@@ -1,5 +1,13 @@
 
 require_relative 'piece'
+# require_relative 'pawn'
+# require_relative 'king'
+# require_relative 'queen'
+# require_relative 'nullpiece'
+# require_relative 'knight'
+# require_relative 'rook'
+# require_relative 'bishop'
+
 
 
 class Board
@@ -72,7 +80,7 @@ class Board
     end
 
     def move_piece(start_pos, end_pos)
-        raise "no piece there" if self[start_pos] == NullPiece
+        raise "no piece there" if self[start_pos].is_a?(NullPiece)
         row, col = end_pos
         raise "can't move there you dumbass" if (row > 7 || col > 7) || (row < 0 || col < 0) || self[end_pos] != NullPiece
         self[end_pos] = self[start_pos]

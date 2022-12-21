@@ -23,8 +23,7 @@ module Stepable
         end
         result
     end
-end
-    end
+
 
     private
     
