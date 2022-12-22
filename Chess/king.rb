@@ -4,6 +4,8 @@ require_relative "stepable"
 class King < Piece 
 include Stepable
 
+    attr_reader :color
+
     def initialize(color, board, pos)
         super
     end

@@ -102,6 +102,60 @@ class Board
         return false if (row > 7 || col > 7) || (row < 0 || col < 0)
         return true
     end
+
+    def in_check?(color)
+        all_opponent_moves = []
+        grid.each do |row|
+            row.each do |ele|
+                if !ele.is_a?(NullPiece) && ele.color != color
+                    all_opponent_moves << ele.moves
+                end
+            end
+        end
+
+        
+        king_pos = []
+        grid.each do |row|
+            row.each do |ele|
+                if ele.is_a?(King) && ele.color == color
+                    king_pos = ele.pos
+                end
+            end
+        end       
+
+        if all_opponent_moves.include?(king_pos)
+            return true
+        else
+            return false
+        end
+    end
     
+        def checkmate?(color)
+        all_opponent_moves = []
+        grid.each do |row|
+            row.each do |ele|
+                if !ele.is_a?(NullPiece) && ele.color != color
+                    all_opponent_moves << ele.moves
+                end
+            end
+        end
+
+        
+        king_moves = []
+        grid.each do |row|
+            row.each do |ele|
+                if ele.is_a?(King) && ele.color == color
+                    king_moves << ele.moves
+                end
+            end
+        end       
+
+        if king_moves.all?{|move| all_opponent_moves.include?(move)}
+            return true
+        else
+            return false
+        end
+    end
+
 end
 
