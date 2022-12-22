@@ -1,5 +1,5 @@
 require "io/console"
-require 'board'
+require_relative 'board'
 
 KEYMAP = {
   " " => :space,
@@ -83,11 +83,11 @@ class Cursor
       when :return, :space
         @cursor_pos
       when :left, :right, :up, :down
-        update_pos(key)
+        update_pos(MOVES[key])
         return nil
       when :ctrl_c
         Process.exit(0)
-      end
+    end
 
   end
 
@@ -101,3 +101,5 @@ class Cursor
   # def toggle_selected
 
   # end
+
+end
