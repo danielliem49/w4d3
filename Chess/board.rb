@@ -96,6 +96,12 @@ class Board
         self[end_pos] = self[start_pos]
         self[start_pos] = NullPiece
     end
+
+    def valid_position?(pos)
+        row,col = pos
+        return false if (row > 7 || col > 7) || (row < 0 || col < 0)
+        return true
+    end
     
 end
 
